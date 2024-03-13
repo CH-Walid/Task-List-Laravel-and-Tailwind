@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+@section('title', 'Create Task')
 @section('content')
 <main>
   <h1 class="uppercase mb-4 text-2xl font-bold">Create Task</h1>

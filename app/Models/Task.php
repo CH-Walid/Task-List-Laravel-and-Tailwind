@@ -12,5 +12,10 @@ class Task extends Model
         'title',
         'description',
         'long_description',
+        'completed'
     ];
+
+    public function toggle_complete() {
+        $this->update(['completed' => !$this->completed]);
+    }
 }
