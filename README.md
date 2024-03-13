@@ -11,10 +11,12 @@
 
 Title: Laravel X10 Task List Manager
 
-https://github.com/CH-Walid/Task-List-Laravel-and-Tailwind/assets/75185278/af654e3e-a83e-463f-9cb1-bd0d86a7718e
+![Capture d’écran 2024-03-13 200814](https://github.com/CH-Walid/Task-List-Laravel-and-Tailwind/assets/75185278/6bb830cc-32e2-410e-a006-e74212bc194a)
 
 Description:
 This project is a robust task list manager built using Laravel X10, Tailwind CSS, and MySQL. It provides a seamless user experience for creating, deleting, updating, and editing tasks, allowing users to efficiently organize their tasks and mark them as complete.
+
+https://github.com/CH-Walid/Task-List-Laravel-and-Tailwind/assets/75185278/589031ce-b617-4bd0-a6b4-d48b66f15f2e
 
 Key Features:
 1. **Task Creation**: Users can easily create new tasks, specifying details such as title, description, due date, and priority.
