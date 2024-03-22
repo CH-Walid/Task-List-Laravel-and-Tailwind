@@ -11,7 +11,7 @@
       <label for="title" class="label">TITLE</label>
       <input type="text" name="title" @class(['input', 'border-red-500' => $errors->has('title')]) value="{{old('title')}}">
       @error('title')
-        <span class="text-red-500 text-sm">{{$message}}</span>
+        <span class="error">{{$message}}</span>
       @enderror
     </div>
 
@@ -19,7 +19,7 @@
       <label for="description" class="label">DESCRIPTION</label>
       <input type="text" name="description" value="{{old('description')}}" @class(['input', 'border-red-500' => $errors->has('description')])>
       @error('description')
-        <span class="text-red-500 text-sm">{{$message}}</span>
+        <span class="error">{{$message}}</span>
       @enderror
     </div>
 
@@ -27,7 +27,7 @@
       <label for="long_description" class="label">LONG DESCRIPTION</label>
       <textarea name="long_description" id="long_description" cols="30" rows="7" @class(['textarea', 'border-red-500' => $errors->has('long_description')])>{{old('long_description')}}</textarea>
       @error('long_description')
-        <span class="text-red-500 text-sm">{{$message}}</span>
+        <span class="error">{{$message}}</span>
       @enderror
     </div>
 

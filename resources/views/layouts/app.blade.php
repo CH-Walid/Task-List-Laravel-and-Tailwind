@@ -18,17 +18,21 @@
       @apply font-medium text-gray-700 underline decoration-pink-500
     }
 
-    label {
+    .label {
       @apply block uppercase text-slate-700 mb-2
     }
 
-    input, 
-    textarea {
+    .input, 
+    .textarea {
       @apply shadow-sm appearance-none border w-full py-2 px-3 text-slate-700 leading-tight focus:outline-none
     }
 
     .error {
       @apply text-red-500 text-sm
+    }
+
+    .checkbox {
+      @apply w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600
     }
   </style>
 </head>
