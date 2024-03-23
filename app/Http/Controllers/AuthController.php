@@ -11,6 +11,9 @@ use Illuminate\Support\Facades\Hash;
 class AuthController extends Controller
 {
     public function login() {
+        if(Auth::check()) {
+            return redirect()->back();
+        }
         return view('auth.login');
     }
 
@@ -48,6 +51,9 @@ class AuthController extends Controller
     }
 
     public function register() {
+        if(Auth::check()) {
+            return redirect()->back();
+        }
         return view('auth.register');
     }
 
@@ -55,7 +61,7 @@ class AuthController extends Controller
         // validate data
         $data = $request->validate([
             'name' => 'required|string',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users,email',
             'password' => 'required',
         ]);
 
