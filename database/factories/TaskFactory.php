@@ -21,6 +21,7 @@ class TaskFactory extends Factory
             'description' => fake()->paragraph(),
             'long_description' => fake()->paragraph(6),
             'completed' => fake()->boolean(30),
+            'user_id' => fake()->numberBetween(1, 10),
         ];
     }
 }
