@@ -18,6 +18,7 @@
 
     <div class="flex items-center gap-2">
       <button type="submit" class="btn">Confirm</button>
+      <a href="{{ route('tasks.show', $id) }}" class="link">Cancel</a>
     </div>
   </form>
 </main>

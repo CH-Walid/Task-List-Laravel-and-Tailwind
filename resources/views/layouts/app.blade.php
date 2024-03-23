@@ -42,10 +42,10 @@
     <div>
       @guest
         @if(Route::currentRouteName() != 'auth.register')
-          <a href="{{ route('auth.register') }}" class="btn">Register</a>
+          <a href="{{ route('auth.register') }}" class="link">Register</a>
         @endif
         @if(Route::currentRouteName() != 'login')
-          <a href="{{ route('login') }}" class="btn">Login</a>
+          <a href="{{ route('login') }}" class="link">Login</a>
         @endif
       @endguest
     </div>

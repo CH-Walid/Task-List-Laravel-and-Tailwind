@@ -34,7 +34,7 @@
 
     <div class="flex items-center gap-2">
       <button type="submit" class="btn">Edit Task</button>
-      <a href="{{route('tasks.index')}}" class="link">Cancel</a>
+      <a href="{{ url()->previous() }}" class="link">Cancel</a>
     </div>
   </form>
 </main>
