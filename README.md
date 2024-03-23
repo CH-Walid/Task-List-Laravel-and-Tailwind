@@ -11,12 +11,12 @@
 
 Title: Laravel X10 Task List Manager
 
-![Capture d’écran 2024-03-13 200814](https://github.com/CH-Walid/Task-List-Laravel-and-Tailwind/assets/75185278/6bb830cc-32e2-410e-a006-e74212bc194a)
+[![Capture](https://github.com/CH-Walid/Task-List-Laravel-and-Tailwind/assets/75185278/876820f0-9580-4974-8816-3bae70706b55)](https://github.com/CH-Walid/Task-List-Laravel-and-Tailwind/assets/75185278/180520e6-fa5a-47d3-9db4-81a1f4be982e)
 
 Description:
 This project is a robust task list manager built using Laravel X10, Tailwind CSS, and MySQL. It provides a seamless user experience for creating, deleting, updating, and editing tasks, allowing users to efficiently organize their tasks and mark them as complete.
 
-https://github.com/CH-Walid/Task-List-Laravel-and-Tailwind/assets/75185278/589031ce-b617-4bd0-a6b4-d48b66f15f2e
+![Capture](https://github.com/CH-Walid/Task-List-Laravel-and-Tailwind/assets/75185278/582c9cba-5275-4021-8e24-0bbb27dc5017)
 
 Key Features:
 1. **Task Creation**: Users can easily create new tasks, specifying details such as title, description, due date, and priority.
@@ -25,6 +25,10 @@ Key Features:
 4. **Task Editing**: Task editing functionality enables users to modify task content seamlessly, adapting to changing requirements or additional information.
 5. **Mark as Complete**: Tasks can be marked as complete with a simple click, providing users with visual feedback on their progress.
 6. **Responsive Design**: The user interface is designed using Tailwind CSS, ensuring a responsive and visually appealing experience across devices of all sizes.
+7. **Registration System**: Users can create an account by providing necessary information such as username, email, and password. Upon successful registration, their credentials will be stored securely.
+8. **Login**: Registered users can log in to their accounts using their email and password combination.
+9. **Remember Me**: Users can opt to have their login credentials remembered for future visits, allowing for a smoother login experience without needing to re-enter their details every time.
+10. **Password Confirmation**: Before deleting a Task, users will be required to confirm their password.
 
 Technologies Used:
 - **Laravel X10**: Leveraging the powerful features of Laravel, including its robust MVC architecture, eloquent ORM, and artisan command-line interface, to build a scalable and maintainable application.
