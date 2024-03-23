@@ -21,10 +21,11 @@ class TaskController extends Controller
         return view('tasks.create');
     }
 
-
     public function store(TaskRequest $request)
     {
+        $user_id = Auth::id();
         $data = $request->validated();
+        $data['user_id'] = $user_id;
         $task = Task::create($data);
         return redirect()->route('tasks.show', $task->id)->with('success', 'Task Creatd Successfully!');
     }
@@ -36,11 +37,13 @@ class TaskController extends Controller
 
     public function edit(Task $task)
     {
+        $this->authorize('update', $task);
         return view('tasks.edit', compact('task'));
     }
 
     public function update(TaskRequest $request, Task $task)
     {
+        $this->authorize('update', $task);
         $data = $request->validated();
 
         $task->update($data);
@@ -49,11 +52,13 @@ class TaskController extends Controller
 
     public function destroy(Task $task, Request $request)
     {
+        $this->authorize('delete', $task);
+
         $request->validate([
             'password' => 'required',
         ]);
 
-        if(! Hash::check($request->password, $request->user()->password)) {
+        if (!Hash::check($request->password, $request->user()->password)) {
             return redirect()->back()->withErrors([
                 'password' => 'invalid password!'
             ]);
@@ -63,7 +68,10 @@ class TaskController extends Controller
         return redirect()->route('tasks.index')->with('success', 'Task Deleted Successfully!');
     }
 
-    public function toggle_complete(Task $task) {
+    public function toggle_complete(Task $task)
+    {
+        $this->authorize('update', $task);
+
         $task->toggle_complete();
         return redirect()->back();
     }
