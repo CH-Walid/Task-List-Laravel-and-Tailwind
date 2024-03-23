@@ -52,7 +52,7 @@ class TaskController extends Controller
 
     public function destroy(Task $task, Request $request)
     {
-        $this->authorize('delete', $task);
+        $this->authorize('forceDelete', $task);
 
         $request->validate([
             'password' => 'required',
