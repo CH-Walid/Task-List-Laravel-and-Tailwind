@@ -37,16 +37,22 @@
 
   <div class="flex items-center gap-2">
     {{-- edit --}}
+    @can('update',$task)
     <a href="{{route('tasks.edit', $task->id)}}" class="btn">Edit</a>
+    @endcan
     {{-- mark as completed --}}
     {{-- <a href="" class="rounded-md px-2 py-1 text-center font-medium text-slate-700 shadow-sm ring-1 ring-slate-700/10 hover:bg-slate-50">Mark as completed</a> --}}
+    @can('update',$task)
     <form action="{{route('tasks.toggle-complete', $task->id)}}" method="POST">
       @method('PUT')
       @csrf
       <button type="submit" class="btn">{{$task->completed ? 'Mark as uncompleted' : 'Mark as completed'}}</button>
     </form>
+    @endcan
     {{-- delete --}}
+    @can('forceDelete',$task)
     <a href="{{ route('auth.delete-confirm', $task->id) }}" class="btn">Delete</a>
+    @endcan
     {{-- <form action="{{route('tasks.destroy', $task->id)}}" method="POST">
       @method('DELETE')
       @csrf
