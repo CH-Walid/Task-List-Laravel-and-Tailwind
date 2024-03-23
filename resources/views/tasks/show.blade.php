@@ -46,11 +46,12 @@
       <button type="submit" class="btn">{{$task->completed ? 'Mark as uncompleted' : 'Mark as completed'}}</button>
     </form>
     {{-- delete --}}
-    <form action="{{route('tasks.destroy', $task->id)}}" method="POST">
+    <a href="{{ route('auth.delete-confirm', $task->id) }}" class="btn">Delete</a>
+    {{-- <form action="{{route('tasks.destroy', $task->id)}}" method="POST">
       @method('DELETE')
       @csrf
       <button type="submit" class="btn">Delete</button>
-    </form>
+    </form> --}}
   </div>
 </main>
 @endsection

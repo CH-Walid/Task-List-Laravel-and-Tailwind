@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\TaskRequest;
 use App\Models\Task;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class TaskController extends Controller
 {
@@ -45,8 +47,18 @@ class TaskController extends Controller
         return redirect()->route('tasks.show', $task->id)->with('success', 'Updated successfully!');
     }
 
-    public function destroy(Task $task)
+    public function destroy(Task $task, Request $request)
     {
+        $request->validate([
+            'password' => 'required',
+        ]);
+
+        if(! Hash::check($request->password, $request->user()->password)) {
+            return redirect()->back()->withErrors([
+                'password' => 'invalid password!'
+            ]);
+        }
+
         $task->delete();
         return redirect()->route('tasks.index')->with('success', 'Task Deleted Successfully!');
     }

@@ -36,6 +36,25 @@
     }
   </style>
 </head>
+
+<header class="mb-8">
+  <nav class="flex items-align justify-between">
+    <div>
+      @guest
+        @if(Route::currentRouteName() != 'auth.register')
+          <a href="{{ route('auth.register') }}" class="btn">Register</a>
+        @endif
+        @if(Route::currentRouteName() != 'login')
+          <a href="{{ route('login') }}" class="btn">Login</a>
+        @endif
+      @endguest
+    </div>
+    @auth
+      <a href="{{ route('logout') }}" class="btn">Logout</a>
+    @endauth
+  </nav>
+</header>
+
 <body class="bg-gray-50 container mx-auto mt-10 mb-10 max-w-lg">
   @if (session('success'))
     <div x-show="flash"
